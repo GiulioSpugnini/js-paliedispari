@@ -29,7 +29,7 @@ function isPalindrom(normalWord) {
 
 enter.addEventListener('click', function() {
     const palWord = isPalindrom(inputText.value);
-    resultPalindrom.innerHTML = `La parola inserita è Palindroma? ${palWord}`;
+    resultPalindrom.innerHTML = `<h3 class="mt-10 white">La parola inserita è Palindroma? ${palWord}</h3>`;
     console.log(palWord);
 });
 /* Pari e Dispari:
@@ -43,7 +43,7 @@ const resultPariDispari = document.getElementById('resultPariDispari');
 const inputNumberPariDispari = document.getElementById('inputNumberPariDispari');
 const pari = document.getElementById('pari');
 const dispari = document.getElementById('dispari');
-
+const resultCpu = document.getElementById('resultCpu');
 
 //#GENERO NUMERO CASUALE DEL COMPUTER
 function cpuRandomNumber(number) {
@@ -54,6 +54,7 @@ console.log('Il numero della Cpu è: ' + cpuNumber);
 
 
 pari.addEventListener('click', function() {
+    resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
     const userNumber = inputNumberPariDispari.value;
     console.log(userNumber);
     // #CALCOLO LA SOMMA TRA I DUE NUMERI
@@ -61,15 +62,16 @@ pari.addEventListener('click', function() {
 
     console.log('La somma dei due numeri è: ' + sum);
     if (sum % 2 == 0) {
-        resultPariDispari.innerHTML = "L'UTENTE HA VINTO!";
+        resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
     } else {
-        resultPariDispari.innerHTML = "LA CPU HA VINTO!";
+        resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
     }
 
     pari.classList.add('d-none');
     dispari.classList.add('d-none');
 })
 dispari.addEventListener('click', function() {
+    resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
     const userNumber = inputNumberPariDispari.value;
     console.log(userNumber);
     // #CALCOLO LA SOMMA TRA I DUE NUMERI
@@ -78,9 +80,9 @@ dispari.addEventListener('click', function() {
 
 
     if (sum % 2 != 0) {
-        resultPariDispari.innerHTML = "L'UTENTE HA VINTO!";
+        resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
     } else {
-        resultPariDispari.innerHTML = "LA CPU HA VINTO!";
+        resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
     }
 
     pari.classList.add('d-none');
