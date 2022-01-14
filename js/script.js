@@ -43,22 +43,46 @@ const resultPariDispari = document.getElementById('resultPariDispari');
 const inputNumberPariDispari = document.getElementById('inputNumberPariDispari');
 const pari = document.getElementById('pari');
 const dispari = document.getElementById('dispari');
-//#CONTROLLO SE IL NUMERO DELL'UTENTE SIA PARI O DISPARI
-function isPari(number) {
-    number = inputNumberPariDispari.value;
-    if (number % 2 == 0) return true;
-    return false;
-}
+
+
 //#GENERO NUMERO CASUALE DEL COMPUTER
 function cpuRandomNumber(number) {
     return number = Math.floor(Math.random() * 5) + 1;
 }
 const cpuNumber = cpuRandomNumber();
-console.log(cpuNumber);
+console.log('Il numero della Cpu è: ' + cpuNumber);
+
 
 pari.addEventListener('click', function() {
-    const numeroPari = isPari(inputNumberPariDispari.value);
-    console.log(numeroPari);
+    const userNumber = inputNumberPariDispari.value;
+    console.log(userNumber);
+    // #CALCOLO LA SOMMA TRA I DUE NUMERI
+    const sum = parseInt(userNumber) + parseInt(cpuNumber);
+
+    console.log('La somma dei due numeri è: ' + sum);
+    if (sum % 2 == 0) {
+        resultPariDispari.innerHTML = "L'UTENTE HA VINTO!";
+    } else {
+        resultPariDispari.innerHTML = "LA CPU HA VINTO!";
+    }
+
+    pari.classList.add('d-none');
+    dispari.classList.add('d-none');
+})
+dispari.addEventListener('click', function() {
+    const userNumber = inputNumberPariDispari.value;
+    console.log(userNumber);
+    // #CALCOLO LA SOMMA TRA I DUE NUMERI
+    const sum = parseInt(userNumber) + parseInt(cpuNumber);
+    console.log('La somma dei due numeri è: ' + sum);
+
+
+    if (sum % 2 != 0) {
+        resultPariDispari.innerHTML = "L'UTENTE HA VINTO!";
+    } else {
+        resultPariDispari.innerHTML = "LA CPU HA VINTO!";
+    }
+
     pari.classList.add('d-none');
     dispari.classList.add('d-none');
 })
