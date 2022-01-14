@@ -5,7 +5,7 @@ const resultPalindrom = document.getElementById('resultPalindroma');
 const inputText = document.getElementById('inputTextPalindroma');
 const enter = document.getElementById('invio');
 
-
+//#GENERO LA PAROLA INVERTITA
 function reverseWord(word) {
     let reverseWord = '';
     for (let i = word.length - 1; i >= 0; i--) {
@@ -15,7 +15,7 @@ function reverseWord(word) {
 }
 const revWord = reverseWord(inputText.value);
 console.log(revWord);
-
+//#CONTROLLO SE LA PAROLA SIA PALINDROMA
 function isPalindrom(normalWord) {
     normalWord = inputText.value;
     const newWord = reverseWord(normalWord);
@@ -43,12 +43,18 @@ const resultPariDispari = document.getElementById('resultPariDispari');
 const inputNumberPariDispari = document.getElementById('inputNumberPariDispari');
 const pari = document.getElementById('pari');
 const dispari = document.getElementById('dispari');
-
+//#CONTROLLO SE IL NUMERO DELL'UTENTE SIA PARI O DISPARI
 function isPari(number) {
     number = inputNumberPariDispari.value;
     if (number % 2 == 0) return true;
     return false;
 }
+//#GENERO NUMERO CASUALE DEL COMPUTER
+function cpuRandomNumber(number) {
+    return number = Math.floor(Math.random() * 5) + 1;
+}
+const cpuNumber = cpuRandomNumber();
+console.log(cpuNumber);
 
 pari.addEventListener('click', function() {
     const numeroPari = isPari(inputNumberPariDispari.value);
