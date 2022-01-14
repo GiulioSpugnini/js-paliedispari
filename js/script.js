@@ -32,6 +32,27 @@ enter.addEventListener('click', function() {
     resultPalindrom.innerHTML = `La parola inserita è Palindroma? ${palWord}`;
     console.log(palWord);
 });
-//Pari e Dispari:
-//L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-const resultPariDispari = document.getElementById('pariDispari');
+/* Pari e Dispari:
+    L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+    Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+    Sommiamo i due numeri
+    Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+    Dichiariamo chi ha vinto.
+*/
+const resultPariDispari = document.getElementById('resultPariDispari');
+const inputNumberPariDispari = document.getElementById('inputNumberPariDispari');
+const pari = document.getElementById('pari');
+const dispari = document.getElementById('dispari');
+
+function isPari(number) {
+    number = inputNumberPariDispari.value;
+    if (number % 2 == 0) return true;
+    return false;
+}
+
+pari.addEventListener('click', function() {
+    const numeroPari = isPari(inputNumberPariDispari.value);
+    console.log(numeroPari);
+    pari.classList.add('d-none');
+    dispari.classList.add('d-none');
+})
