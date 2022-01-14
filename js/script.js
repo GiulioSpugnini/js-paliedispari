@@ -61,37 +61,51 @@ console.log('Il numero della Cpu è: ' + cpuNumber);
 
 
 pari.addEventListener('click', function() {
-    resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
-    const userNumber = inputNumberPariDispari.value;
-    console.log(userNumber);
-    // #CALCOLO LA SOMMA TRA I DUE NUMERI
-    const sum = parseInt(userNumber) + parseInt(cpuNumber);
-
-    console.log('La somma dei due numeri è: ' + sum);
-    if (sum % 2 == 0) {
-        resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+    //!VALIDATION
+    if (parseInt(inputNumberPariDispari.value) <= 0) {
+        alert('Devi inserire un numero maggiore di 0("zero")');
+        inputNumberPariDispari.value = '';
     } else {
-        resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
-    }
 
-    pari.classList.add('d-none');
-    dispari.classList.add('d-none');
+        resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
+        const userNumber = inputNumberPariDispari.value;
+        console.log(userNumber);
+        // #CALCOLO LA SOMMA TRA I DUE NUMERI
+        const sum = parseInt(userNumber) + parseInt(cpuNumber);
+
+        console.log('La somma dei due numeri è: ' + sum);
+        if (sum % 2 == 0) {
+            resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+        } else {
+            resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
+        }
+
+        pari.classList.add('d-none');
+        dispari.classList.add('d-none');
+    }
 })
 dispari.addEventListener('click', function() {
-    resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
-    const userNumber = inputNumberPariDispari.value;
-    console.log(userNumber);
-    // #CALCOLO LA SOMMA TRA I DUE NUMERI
-    const sum = parseInt(userNumber) + parseInt(cpuNumber);
-    console.log('La somma dei due numeri è: ' + sum);
-
-
-    if (sum % 2 != 0) {
-        resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+    //!VALIDATION
+    if (parseInt(inputNumberPariDispari.value) <= 0) {
+        alert('Devi inserire un numero maggiore di 0("zero")');
+        inputNumberPariDispari.value = '';
     } else {
-        resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
-    }
 
-    pari.classList.add('d-none');
-    dispari.classList.add('d-none');
+        resultCpu.innerHTML = 'Il numero della CPU era: ' + cpuNumber;
+        const userNumber = inputNumberPariDispari.value;
+        console.log(userNumber);
+        // #CALCOLO LA SOMMA TRA I DUE NUMERI
+        const sum = parseInt(userNumber) + parseInt(cpuNumber);
+        console.log('La somma dei due numeri è: ' + sum);
+
+
+        if (sum % 2 != 0) {
+            resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+        } else {
+            resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
+        }
+
+        pari.classList.add('d-none');
+        dispari.classList.add('d-none');
+    }
 })
