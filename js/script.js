@@ -28,9 +28,16 @@ function isPalindrom(normalWord) {
 }
 
 enter.addEventListener('click', function() {
-    const palWord = isPalindrom(inputText.value);
-    resultPalindrom.innerHTML = `<h3 class="mt-10 white">La parola inserita è Palindroma? ${palWord}</h3>`;
-    console.log(palWord);
+    //!VALIDATION
+    if (!isNaN(parseInt(inputText.value))) {
+        alert('Puoi inserire solo del testo');
+        inputText.value = '';
+    } else {
+        const palWord = isPalindrom(inputText.value);
+        resultPalindrom.innerHTML = `<h3 class="mt-10 white">La parola inserita è Palindroma? ${palWord}</h3>`;
+        console.log(palWord);
+    }
+
 });
 /* Pari e Dispari:
     L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
