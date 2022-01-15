@@ -51,6 +51,7 @@ const inputNumberPariDispari = document.getElementById('inputNumberPariDispari')
 const pari = document.getElementById('pari');
 const dispari = document.getElementById('dispari');
 const resultCpu = document.getElementById('resultCpu');
+const retry = document.getElementById('retry');
 
 //#GENERO NUMERO CASUALE DEL COMPUTER
 function cpuRandomNumber(number) {
@@ -75,13 +76,15 @@ pari.addEventListener('click', function() {
 
         console.log('La somma dei due numeri è: ' + sum);
         if (sum % 2 == 0) {
-            resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+            resultPariDispari.innerHTML = `<h2 class="mt-10 rainbow">L'UTENTE HA VINTO!</h2>`;
         } else {
-            resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
+            resultPariDispari.innerHTML = `<h2 class="mt-10 rainbow">LA CPU HA VINTO!</h2>`;
         }
 
         pari.classList.add('d-none');
         dispari.classList.add('d-none');
+        retry.classList.remove('d-none');
+
     }
 })
 dispari.addEventListener('click', function() {
@@ -100,12 +103,23 @@ dispari.addEventListener('click', function() {
 
 
         if (sum % 2 != 0) {
-            resultPariDispari.innerHTML = `<h4 class="mt-10 white">L'UTENTE HA VINTO!</h4>`;
+            resultPariDispari.innerHTML = `<h2 class="mt-10 rainbow">L'UTENTE HA VINTO!</h2>`;
         } else {
-            resultPariDispari.innerHTML = `<h4 class="mt-10 white">LA CPU HA VINTO!</h4>`;
+            resultPariDispari.innerHTML = `<h2 class="mt-10 rainbow">LA CPU HA VINTO!</h2>`;
         }
 
         pari.classList.add('d-none');
         dispari.classList.add('d-none');
+        retry.classList.remove('d-none');
+
     }
+})
+retry.addEventListener('click', function() {
+    pari.classList.remove('d-none');
+    dispari.classList.remove('d-none');
+    retry.classList.add('d-none');
+
+    inputNumberPariDispari.value = '';
+    resultPariDispari.innerHTML = '';
+    resultCpu.innerHTML = '';
 })

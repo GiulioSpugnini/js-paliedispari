@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Giulio Spugnini">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==' crossorigin='anonymous' />
     <link rel="stylesheet" href="css/style.css">
     <title>Palindroma - Pari e Dispari</title>
 </head>
 
 <body>
     <div class="primoEsercizio">
-        <h2 class="pb-2">INSERISCI UNA PAROLA PER VERIFICARE SE SIA PALINDROMA:</h2>
+        <h1 class="pb-2 ocra">INSERISCI UNA PAROLA PER VERIFICARE SE SIA PALINDROMA:</h1>
         <input type="text" id="inputTextPalindroma">
         <button id="invio">Invio</button>
         <div id="resultPalindroma"></div>
     </div>
     <div class="secondoEsercizio">
-        <h2 class="pb-2">INSERISCI UN NUMERO E SCEGLI PARI O DISPARI:</h2>
+        <h1 class="pb-2 ocra">INSERISCI UN NUMERO E SCEGLI PARI O DISPARI:</h1>
         <input type="number" id="inputNumberPariDispari" min="1" max="5">
         <button id="pari">Pari</button>
         <button id="dispari">Dispari</button>
+        <button class="d-none" id="retry"><i class="fas fa-redo-alt"></i></button>
         <div id="resultPariDispari"></div>
         <div id="resultCpu"></div>
     </div>
