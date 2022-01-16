@@ -57,7 +57,7 @@ const retry = document.getElementById('retry');
 function cpuRandomNumber(number) {
     return number = Math.floor(Math.random() * 5) + 1;
 }
-const cpuNumber = cpuRandomNumber();
+let cpuNumber = cpuRandomNumber();
 console.log('Il numero della Cpu è: ' + cpuNumber);
 
 
@@ -118,7 +118,7 @@ retry.addEventListener('click', function() {
     pari.classList.remove('d-none');
     dispari.classList.remove('d-none');
     retry.classList.add('d-none');
-
+    cpuNumber = cpuRandomNumber();
     inputNumberPariDispari.value = '';
     resultPariDispari.innerHTML = '';
     resultCpu.innerHTML = '';
